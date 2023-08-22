@@ -1,0 +1,10 @@
+#code 01- Create Table Query Link
+https://livesql.oracle.com/apex/livesql/s/hpq2d5piet6bfiv7307lsq1r
+create table Persons( 
+    per_id int, 
+    per_Name varchar(50), 
+    gender varchar(20), 
+    location varchar(50) 
+)
+#Output:
+Table created.
