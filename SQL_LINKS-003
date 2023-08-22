@@ -1,3 +1,5 @@
+https://livesql.oracle.com/apex/livesql/s/hp0hoh0cv3m9cy7cnf4ow8gw
+
 Create table MCA_SEM_I(
     roll int primary key,
     name varchar(50),
