@@ -1,3 +1,5 @@
+#LINK:
+https://livesql.oracle.com/apex/livesql/s/hpugwu3iclridpot4i6jjtpe
 #SQL QUERY
 insert into Persons values(1 , 'Onkar' , 'Male' , 'Talere');
 insert into Persons values(2 , 'Aniket' , 'Male' , 'Talere1');
