@@ -1,0 +1,24 @@
+Create table MCA_SEM_I(
+    roll int primary key,
+    name varchar(50),
+    surName varchar(50),
+    address varchar(50),
+    MobNo number(10),
+    Marks varchar(6),
+    Area_of_Interest varchar(50)
+);
+
+insert into MCA_SEM_I values(1,'Onkar','Malawade','Talere',7020767140,'98.09','Coding and Data Structure');
+insert into MCA_SEM_I values(2,'Aniket','Singh','Ratanagiri',7020767104,'99.09','Coding and Data Structure');
+insert into MCA_SEM_I values(3,'Atharv','Bhate','kasarde',7020767100,'97.09','Coding and Data Structure');
+insert into MCA_SEM_I values(4,'Kunal','Parab','Goa',7020767144,'96.09','Coding and Data Structure');
+insert into MCA_SEM_I values(5,'Adi','Shinde','Pune',7020767155,'95.09','Coding and Data Structure');
+
+select * from MCA_SEM_I;
+
+Select Roll, Name , Address from MCA_SEM_I where Roll = 1;
+
+select * from MCA_SEM_I where MOBNO = 7020767185;
+
+
+insert into MCA_SEM_I values(1,'Onkar','Malawade','Talere',7020767140,'98.09','Coding and Data Structure');
