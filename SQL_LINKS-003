@@ -1,3 +1,4 @@
+Session-02
 https://livesql.oracle.com/apex/livesql/s/hp0hoh0cv3m9cy7cnf4ow8gw
 
 Create table MCA_SEM_I(
@@ -22,5 +23,16 @@ Select Roll, Name , Address from MCA_SEM_I where Roll = 1;
 
 select * from MCA_SEM_I where MOBNO = 7020767185;
 
-
 insert into MCA_SEM_I values(1,'Onkar','Malawade','Talere',7020767140,'98.09','Coding and Data Structure');
+
+________________________________________________________________________________________________________________________________________
+Session-03
+
+https://livesql.oracle.com/apex/livesql/s/hp0h14f6g55bmx8956iugcb4
+
+alter table MCA_SEM_I add BRANCH varchar(50);
+
+select * from MCA_SEM_I;
+
+update MCA_SEM_I set Branch = 'MCA' where Roll = 1;
+
