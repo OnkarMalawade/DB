@@ -1,0 +1,76 @@
+#SQL QUERY
+insert into Persons values(1 , 'Onkar' , 'Male' , 'Talere');
+insert into Persons values(2 , 'Aniket' , 'Male' , 'Talere1');
+insert into Persons values(3 , 'Atharv' , 'Male' , 'Talere2');
+insert into Persons values(4 , 'Pandurang' , 'Male' , 'Talere3');
+insert into Persons values(5 , 'Kunal' , 'Male' , 'Talere4');
+
+#Output:
+1 row(s) inserted.
+
+1 row(s) inserted.
+
+1 row(s) inserted.
+
+1 row(s) inserted.
+
+1 row(s) inserted.
+
+#SQL QUERY
+1-->
+select * from Persons;
+
+#Output:
+PER_ID	PER_NAME	GENDER	LOCATION
+1	Onkar	Male	Talere
+1	Onkar1	Male	Talere
+1	Onkar	Male	Talere
+2	Aniket	Male	Talere1
+3	Atharv	Male	Talere2
+4	Pandurang	Male	Talere3
+5	Kunal	Male	Talere4
+
+2-->
+select per_Name , location from Persons;
+
+#Output:
+PER_NAME	LOCATION
+Onkar	Talere
+Onkar1	Talere
+Onkar	Talere
+Aniket	Talere1
+Atharv	Talere2
+Pandurang	Talere3
+Kunal	Talere4
+Onkar	Talere
+Aniket	Talere1
+Atharv	Talere2
+Pandurang	Talere3
+Kunal	Talere4
+
+3-->
+select * from Persons where per_id = 1;
+
+#Output:
+
+PER_ID	PER_NAME	GENDER	LOCATION
+1	Onkar	Male	Talere
+1	Onkar1	Male	Talere
+1	Onkar	Male	Talere
+1	Onkar	Male	Talere
+1	Onkar	Male	Talere
+
+
+4-->
+select * from Persons where location = 'Talere';
+
+#Output:
+
+PER_ID	PER_NAME	GENDER	LOCATION
+1	Onkar	Male	Talere
+1	Onkar1	Male	Talere
+1	Onkar	Male	Talere
+1	Onkar	Male	Talere
+1	Onkar	Male	Talere
+1	Onkar	Male	Talere
+
