@@ -1,0 +1,94 @@
+CODE:
+create table Sales(year number(4),product varchar(10), amount number(10,2))
+Partition by range(year)(
+    Partition p1 values less than(1990),
+    Partition p2 values less than(1993),
+    Partition p3 values less than(MAXVALUE)
+);
+
+insert into Sales values(1991,'IRON',2300);
+insert into Sales values(1989,'CYCLE',8000);
+insert into Sales values(1992,'PEN',10);
+insert into Sales values(1996,'PHONES',40000);
+insert into Sales values(1991,'CEMENT',390);
+insert into Sales values(1989,'SCREWS',100);
+insert into Sales values(2000,'DATA',10000);
+insert into Sales values(1976,'NAILPAINT',100);
+insert into Sales values(1992,'SHEET',9000);
+insert into Sales values(1998,'AC',10000);
+
+SELECT * FROM Sales;
+
+select * from sales partition(p1);
+select * from sales partition(p2);
+select * from sales partition(p3);
+
+OUTPUT:
+YEAR	PRODUCT	AMOUNT
+1989	CYCLE	8000
+1989	SCREWS	100
+1976	NAILPAINT	100
+1989	CYCLE	8000
+1989	SCREWS	100
+1976	NAILPAINT	100
+1989	CYCLE	8000
+1989	SCREWS	100
+1976	NAILPAINT	100
+1989	CYCLE	8000
+1989	SCREWS	100
+1976	NAILPAINT	100
+1991	IRON	2300
+1992	PEN	10
+1991	CEMENT	390
+1992	SHEET	9000
+1991	IRON	2300
+1992	PEN	10
+1991	CEMENT	390
+1992	SHEET	9000
+1991	IRON	2300
+1992	PEN	10
+1991	CEMENT	390
+1992	SHEET	9000
+1991	IRON	2300
+1992	PEN	10
+1991	CEMENT	390
+1992	SHEET	9000
+Download CSV
+28 rows selected.
+
+Result Set 8
+YEAR	PRODUCT	AMOUNT
+1989	CYCLE	8000
+1989	SCREWS	100
+1976	NAILPAINT	100
+1989	CYCLE	8000
+1989	SCREWS	100
+1976	NAILPAINT	100
+1989	CYCLE	8000
+1989	SCREWS	100
+1976	NAILPAINT	100
+1989	CYCLE	8000
+1989	SCREWS	100
+1976	NAILPAINT	100
+Download CSV
+12 rows selected.
+
+Result Set 9
+YEAR	PRODUCT	AMOUNT
+1991	IRON	2300
+1992	PEN	10
+1991	CEMENT	390
+1992	SHEET	9000
+1991	IRON	2300
+1992	PEN	10
+1991	CEMENT	390
+1992	SHEET	9000
+1991	IRON	2300
+1992	PEN	10
+1991	CEMENT	390
+1992	SHEET	9000
+1991	IRON	2300
+1992	PEN	10
+1991	CEMENT	390
+1992	SHEET	9000
+
