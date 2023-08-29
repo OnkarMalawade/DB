@@ -1,0 +1,12 @@
+
+# 01 CODE:
+create table Employee (empID int, empName varchar(50), empAge int)
+Partition by range(empAge)(
+  Partition p1 values less than (18),
+  Partition p2 values less than (28),
+  Partition p3 values less than (38)
+);
+
+OUTPUT:
+Table created.
+
