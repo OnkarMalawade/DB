@@ -1,3 +1,5 @@
+#CREATE RANGE PARTITONING IN TABLE
+
 create table Employee (empID int, empName varchar(50), empAge int)
 Partition by range(empAge)(
   Partition p1 values less than (18),
