@@ -108,3 +108,32 @@ select * from customers partition(east);
 
 ALTER TABLE customers ADD PARTITION central_India VALUES ('BHOPAL','NAGPUR');
 select * from customers partition(central_India);
+
+ALTER TABLE customers 
+	MODIFY PARTITION south 
+	ADD VALUES ('KOCHI', 'MANGALORE');
+
+insert into customers values(142,'Om1','Talere','KOCHI',5000000);
+
+insert into customers values(143,'Raju1','Talere','KOCHI',5000000);
+
+insert into customers values(144,'Tejas1','Talere','KOCHI',5000000);
+
+insert into customers values(145,'Sandip1','Talere','MANGALORE',5000000);
+
+insert into customers values(146,'Alpha1','Talere','MANGALORE',5000000);
+
+insert into customers values(147,'Beta1','Talere','MANGALORE',5000000);
+
+select * from customers partition(south);
+
+ALTER TABLE customers MODIFY PARTITION south DROP VALUES ('CHENNAI', 'MANGALORE');
+
+select * from customers partition(south);
+
+Delete from customers where City = 'CHENNAI';
+Delete from customers where City = 'MANGALORE';
+
+ALTER TABLE customers MODIFY PARTITION south DROP VALUES ('CHENNAI', 'MANGALORE');
+
+select * from customers partition(south);
