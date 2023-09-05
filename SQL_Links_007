@@ -137,3 +137,10 @@ Delete from customers where City = 'MANGALORE';
 ALTER TABLE customers MODIFY PARTITION south DROP VALUES ('CHENNAI', 'MANGALORE');
 
 select * from customers partition(south);
+
+ALTER TABLE customers SPLIT PARTITION west INTO
+  (PARTITION northwest VALUES ('BOMBAY'),
+   PARTITION restofthewest);
+
+select * from customers partition(northwest);
+select * from customers partition(restofthewest);
