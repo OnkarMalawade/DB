@@ -1,0 +1,80 @@
+#CREATE LIST PARTITIONING
+
+CREATE TABLE customers(custcode number(5),
+                  cust_name varchar2(20),
+                  Address varchar2(10),
+                  City varchar2(20),
+                  Bal number(10))
+partition by list(City)
+(partition north values ('DELHI','CHANDIGARH'),
+partition east values ('KOLKOTA','PATNA'),
+partition south values ('HYDERABAD','BANGALORE','CHENNAI'),
+partition west values ('BOMBAY','GOA'));
+
+insert into customers values(101,'Onkar','Talere','BANGALORE',5000000);
+
+insert into customers values(102,'Aniket','Talere','BOMBAY',5000000);
+
+insert into customers values(103,'Ram','Talere','GOA',5000000);
+
+insert into customers values(104,'Shyam','Talere','GOA',5000000);
+
+insert into customers values(105,'Sundar','Talere','KOLKOTA',5000000);
+
+insert into customers values(106,'Om','Talere','BOMBAY',5000000);
+
+insert into customers values(107,'Raju','Talere','CHANDIGARH',5000000);
+
+insert into customers values(108,'Tejas','Talere','GOA',5000000);
+
+insert into customers values(109,'Sandip','Talere','CHENNAI',5000000);
+
+insert into customers values(110,'Alpha','Talere','BOMBAY',5000000);
+
+insert into customers values(111,'Beta','Talere','CHENNAI',5000000);
+
+insert into customers values(112,'Aditya','Talere','CHENNAI',5000000);
+
+insert into customers values(113,'Sachin','Talere','CHENNAI',5000000);
+
+insert into customers values(114,'Thugesh','Talere','HYDERABAD',5000000);
+
+insert into customers values(115,'Shreeman','Talere','HYDERABAD',5000000);
+
+insert into customers values(116,'Sitaram','Talere','HYDERABAD',5000000);
+
+insert into customers values(117,'Vishal','Talere','BOMBAY',5000000);
+
+insert into customers values(118,'Uzaif','Talere','CHANDIGARH',5000000);
+
+insert into customers values(119,'Kunal','Talere','CHANDIGARH',5000000);
+
+insert into customers values(120,'Suyash','Talere','PATNA',5000000);
+
+insert into customers values(121,'Yash','Talere','PATNA',5000000);
+
+insert into customers values(122,'Rajan','Talere','BANGALORE',5000000);
+
+insert into customers values(123,'Sahil','Talere','BANGALORE',5000000);
+
+insert into customers values(124,'Rahul','Talere','BANGALORE',5000000);
+
+insert into customers values(125,'Paresh','Talere','BOMBAY',5000000);
+
+insert into customers values(126,'Kaustubh','Talere','BANGALORE',5000000);
+
+insert into customers values(127,'Kamu','Talere','KOLKOTA',5000000);
+
+insert into customers values(128,'Satyajit','Talere','BANGALORE',5000000);
+
+insert into customers values(129,'Sahil1','Talere','BANGALORE',5000000);
+
+insert into customers values(130,'Rahul1','Talere','DELHI',5000000);
+
+insert into customers values(131,'Paresh1','Talere','KOLKOTA',5000000);
+
+insert into customers values(132,'Kaustubh1','Talere','DELHI',5000000);
+
+insert into customers values(133,'Kamu1','Talere','KOLKOTA',5000000);
+
+insert into customers values(134,'Satyajit1','Talere','DELHI',5000000);
