@@ -1,0 +1,24 @@
+Create table test_record(
+    test_id varchar2(20),
+    test_type varchar2(50),
+    patient_name varchar2(50),
+    employee_no number(10),
+    labno varchar2(20),
+    res varchar2(10))
+partition by list(res)(
+	partition res1 values('positive'),
+	partition res2 values('negative')
+);
+
+insert into test_record values('A101', 'Haemoglobin Test','Raju',7020304010,'LAB01','positive');
+insert into test_record values('A102', 'Haemoglobin Test','kaju',7020304011,'LAB02','positive');
+insert into test_record values('A103', 'Haemoglobin Test','Paju',7020304012,'LAB01','positive');
+insert into test_record values('A104', 'Haemoglobin Test','Naju',7020304013,'LAB02','positive');
+insert into test_record values('A105', 'Haemoglobin Test','Haju',7020304013,'LAB01','negative');
+insert into test_record values('A106', 'Haemoglobin Test','Biaju',7020304014,'LAB02','negative');
+insert into test_record values('A107', 'Haemoglobin Test','RAMju',7020304015,'LAB01','negative');
+insert into test_record values('A108', 'Haemoglobin Test','Rja',7020304016,'LAB02','negative');
+
+select * from test_record;
+select * from test_record partition(res1);
+select * from test_record partition(res2);
