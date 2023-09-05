@@ -78,3 +78,33 @@ insert into customers values(132,'Kaustubh1','Talere','DELHI',5000000);
 insert into customers values(133,'Kamu1','Talere','KOLKOTA',5000000);
 
 insert into customers values(134,'Satyajit1','Talere','DELHI',5000000);
+
+select * from customers;
+select * from customers partition(west);
+select * from customers partition(south);
+select * from customers partition(north);
+select * from customers partition(east);
+
+insert into customers values(134,'Satyajit1','Talere','DELHI',5000000);
+
+insert into customers values(135,'Satyajit2','Talere','NAGPUR',5000000);
+
+insert into customers values(136,'Sahil2','Talere','NAGPUR',5000000);
+
+insert into customers values(137,'Rahul2','Talere','NAGPUR',5000000);
+
+insert into customers values(138,'Paresh3','Talere','NAGPUR',5000000);
+
+insert into customers values(139,'Kaustubh2','Talere','BHOPAL',5000000);
+
+insert into customers values(140,'Kamu2','Talere','BHOPAL',5000000);
+
+insert into customers values(141,'Satyajit3','Talere','BHOPAL',5000000);
+select * from customers;
+select * from customers partition(west);
+select * from customers partition(south);
+select * from customers partition(north);
+select * from customers partition(east);
+
+ALTER TABLE customers ADD PARTITION central_India VALUES ('BHOPAL','NAGPUR');
+select * from customers partition(central_India);
