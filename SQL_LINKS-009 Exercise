@@ -1,0 +1,26 @@
+Create table book1(book_id varchar2(20) primary key,title varchar2(50),author varchar2(50), price number(10),book_rating int) 
+partition by range(book_rating)( 
+  Partition p1 values less than (1), 
+  Partition p2 values less than (2), 
+  Partition p3 values less than (3),
+  Partition p4 values less than(MAXVALUE)
+);
+
+insert into book1 values('A01', 'Rich Dad Poor Dad', 'Robert KioSaki', 750, 5);
+insert into book1 values('A02', 'Anna Karenina', 'Leo Tolstoy', 900, 4);
+insert into book1 values('A03', 'Madame Bovary', 'Gustave Flaubert', 550, 5);
+insert into book1 values('A04', 'War and Peace', 'Leo Tolstoy', 250, 2);
+insert into book1 values('A05', 'The Great Gatsby', 'F. Scott Fitzgerald', 750, 2);
+insert into book1 values('A06', 'Lolita', 'Vladimir Nabokov', 150, 1);
+insert into book1 values('A07', 'Middlemarch', 'George Eliot', 850, 4);
+insert into book1 values('A08', 'The Adventures of Huckleberry Finn', 'Mark Twain', 650, 1);
+insert into book1 values('A09', 'In Search of Lost Time', 'Marcel Proust', 280, 2);
+insert into book1 values('A10', 'Hamlet', 'William Shakespeare', 120, 1);
+insert into book1 values('A11', 'Middlemarch', 'George Eliot', 850, 3);
+insert into book1 values('A12', 'The Adventures of Huckleberry Finn', 'Mark Twain', 650, 3);
+insert into book1 values('A13', 'In Search of Lost Time', 'Marcel Proust', 280, 3);
+insert into book1 values('A14', 'Hamlet', 'William Shakespeare', 120, 3);
+
+SELECT * FROM book1 partition(p4)
+WHERE price BETWEEN 200 AND 1000;
+
