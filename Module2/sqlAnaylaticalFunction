@@ -28,3 +28,84 @@ insert into dept values(16,'Manager','Talere');
 insert into dept values(17,'Manager','Goa');
 insert into dept values(18,'Finance','Talere');
 insert into dept values(19,'Engineer','Pune');
+
+insert into emp   
+values(   
+ 7839, 'KING', 'PRESIDENT', null,   
+ to_date('17-11-1981','dd-mm-yyyy'),   
+ 5000, null, 10   
+);
+
+insert into emp   
+values(   
+ 7840, 'Raja', 'PRESIDENT', null,   
+ to_date('17-11-1991','dd-mm-yyyy'),   
+ 6000, null, 11  
+);
+
+insert into emp   
+values(   
+ 7841, 'Aditya', 'Alpha', 10,   
+ to_date('7-11-1881','dd-mm-yyyy'),   
+ 500, null, 12   
+);
+
+insert into emp   
+values(   
+ 7842, 'Raju', 'RESIDENT', null,   
+ to_date('17-1-1991','dd-mm-yyyy'),   
+ 6000, null, 11  
+);
+
+insert into emp   
+values(   
+ 7843, 'Karna', 'RESIDENT', 1,   
+ to_date('17-10-1981','dd-mm-yyyy'),   
+ 5000, null, 10   
+);
+
+insert into emp   
+values(   
+ 7844, 'Raja', 'PRESIDENT', null,   
+ to_date('17-11-1991','dd-mm-yyyy'),   
+ 6000, null, 11  
+);
+
+insert into emp   
+values(   
+ 7845, 'Beta', 'RESIDENT', 2,   
+ to_date('17-11-1981','dd-mm-yyyy'),   
+ 5000, null, 15   
+);
+
+insert into emp   
+values(   
+ 7846, 'Ajay', 'RESIDENT', 1,   
+ to_date('17-11-1961','dd-mm-yyyy'),   
+ 6000, null, 18  
+);
+
+insert into emp   
+values(   
+ 7847, 'Abdula', 'RESIDENT', null,   
+ to_date('17-11-1781','dd-mm-yyyy'),   
+ 5000, null, 12   
+);
+
+insert into emp   
+values(   
+ 7848, 'Rajesh', 'RESIDENT', 16,   
+ to_date('17-12-1991','dd-mm-yyyy'),   
+ 6000, null, 16  
+);
+
+select ename, dname, job, empNo, hirDate, loc   
+from emp, dept   
+where emp.deptNo = dept.deptNo   
+order by ename;
+
+select dname, count(*) count_of_employees 
+from dept, emp 
+where dept.deptNo = emp.deptNo 
+group by DNAME 
+order by 2 desc;
