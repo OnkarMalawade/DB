@@ -94,6 +94,20 @@ values(
 
 insert into emp   
 values(   
+ 7899, 'Raja', 'PRESIDENT', null,   
+ to_date('17-11-1991','dd-mm-yyyy'),   
+ 6000, null, 14 
+);
+
+insert into emp   
+values(   
+ 7856, 'Raja', 'PRESIDENT', null,   
+ to_date('17-11-1991','dd-mm-yyyy'),   
+ 6000, null, 13  
+);
+
+insert into emp   
+values(   
  7848, 'Rajesh', 'RESIDENT', 16,   
  to_date('17-12-1991','dd-mm-yyyy'),   
  6000, null, 16  
@@ -109,3 +123,9 @@ from dept, emp
 where dept.deptNo = emp.deptNo 
 group by DNAME 
 order by 2 desc;
+
+select empNo,
+	deptNo,
+	sal,
+	RANK() Over (partition by deptNo Order By sal) As myrank
+from emp;
