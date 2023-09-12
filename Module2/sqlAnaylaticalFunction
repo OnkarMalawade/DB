@@ -17,3 +17,14 @@ create table emp(
     constraint pk_emp primary key (empNo),
     constraint fk_deptNo foreign key (deptNo) references dept(deptNo)
 );
+
+insert into dept values(10,'Finance','Talere');
+insert into dept values(11,'Finance','Talere');
+insert into dept values(12,'HR','Goa');
+insert into dept values(13,'HR','Talere');
+insert into dept values(14,'HR','Pune');
+insert into dept values(15,'Finance','Pune');
+insert into dept values(16,'Manager','Talere');
+insert into dept values(17,'Manager','Goa');
+insert into dept values(18,'Finance','Talere');
+insert into dept values(19,'Engineer','Pune');
