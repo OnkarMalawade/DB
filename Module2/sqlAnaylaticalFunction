@@ -1,0 +1,19 @@
+create table dept(
+    deptNo number(2,0),
+    dname varchar2(14),
+    loc varchar2(50),
+    constraint pk_dept primary key (deptNo)
+);
+
+create table emp(
+    empNo number(4,0),
+    ename varchar2(50),
+    job varchar2(40),
+    mgr number(10),
+    hirDate date,
+    sal number(7,2),
+    comm number(7,2),
+    deptNo number(2,0),
+    constraint pk_emp primary key (empNo),
+    constraint fk_deptNo foreign key (deptNo) references dept(deptNo)
+);
