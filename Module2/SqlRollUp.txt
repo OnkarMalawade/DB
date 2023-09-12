@@ -1,0 +1,27 @@
+create table RollupTest(id int primary key,
+name varchar(50),
+gender varchar(20),
+salary int,
+department varchar(50));
+
+insert into RollupTest values(1,'moly','male',5000,'sales');
+insert into RollupTest values(2,'jimmy','female',6000,'HR');
+insert into RollupTest values(3,'katal','female',7500,'IT');
+insert into RollupTest values(4,'lenda','male',6500,'markating');
+insert into RollupTest values(5,'shnana','female',5500,'finance');
+insert into RollupTest values(6,'mike','male',8000,'sales');
+insert into RollupTest values(7,'tony','male',7200,'HR');
+insert into RollupTest values(8,'lorry','female',6600,'IT');
+insert into RollupTest values(9,'kene','female',5400,'markating');
+insert into RollupTest values(10,'hary','female',6300,'finance');
+insert into RollupTest values(11,'potter','male',5700,'sales');
+insert into RollupTest values(12,'zim kerry','male',7000,'HR');
+insert into RollupTest values(13,'mikel','female',7100,'IT');
+insert into RollupTest values(14,'jakson','female',6800,'markating');
+insert into RollupTest values(15,'warden','male',5000,'finance');
+
+select * from RollupTest;
+
+select department, sum(salary) from RollupTest Group By department;
+
+select depatrment, sum(salary) from RollupTest Group By rollup(department);
