@@ -24,4 +24,10 @@ select * from RollupTest;
 
 select department, sum(salary) from RollupTest Group By department;
 
-select depatrment, sum(salary) from RollupTest Group By rollup(department);
+select department, sum(salary) from RollupTest Group By rollup(department);
+
+select coalesce(department, 'Total'), sum(salary) from RollupTest Group By rollup(department);
+
+select coalesce(department, 'All Departments'), sum(salary) from RollupTest Group By rollup(department,gender);
+
+select coalesce(department, 'Total'), sum(salary) from RollupTest Group By rollup(department, gender);
