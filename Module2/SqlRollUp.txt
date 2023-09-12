@@ -33,3 +33,5 @@ select coalesce(department, 'All Departments'), sum(salary) from RollupTest Grou
 select coalesce(department, 'Total'), sum(salary) from RollupTest Group By rollup(department, gender);
 
 select coalesce(department, 'Total'), sum(salary) from RollupTest Group By cube(department, gender);
+
+select coalesce(department, 'Total'),gender, sum(salary) from RollupTest Group By cube(department, gender);
