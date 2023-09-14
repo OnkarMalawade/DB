@@ -1,0 +1,26 @@
+create table Employee (empID int, empName varchar(50), empAge int)
+Partition by range(empAge)(
+  Partition p1 values less than (18),
+  Partition p2 values less than (28),
+  Partition p3 values less than (38)
+);
+
+insert into Employee values(1,'Onkar',23);
+insert into Employee values(2,'Rasika',13);
+insert into Employee values(3,'Atharv',63);
+insert into Employee values(4,'Abhi',33);
+insert into Employee values(5,'Manali',43);
+insert into Employee values(6,'Vaishnavi',33);
+insert into Employee values(7,'Sanika',23);
+insert into Employee values(8,'Aniket',38);
+insert into Employee values(9,'Esha',69);
+insert into Employee values(10,'Aditya',54);
+
+select * from Employee partition(p1);
+select * from Employee partition(p2);
+
+ALTER TABLE Employee ADD PARTITION p4 VALUES LESS THAN (50);
+
+ALTER TABLE Employee DROP PARTITION p3;
+
+select * from Employee partition(p4);
