@@ -1,5 +1,3 @@
-#CREATE RANGE PARTITONING IN TABLE
-
 create table Employee (empID int, empName varchar(50), empAge int)
 Partition by range(empAge)(
   Partition p1 values less than (18),
@@ -18,7 +16,11 @@ insert into Employee values(8,'Aniket',38);
 insert into Employee values(9,'Esha',69);
 insert into Employee values(10,'Aditya',54);
 
-select * from sales partition(p1);
-select * from sales partition(p2);
+select * from Employee partition(p1);
+select * from Employee partition(p2);
 
 ALTER TABLE Employee ADD PARTITION p4 VALUES LESS THAN (50);
+
+ALTER TABLE Employee DROP PARTITION p3;
+
+select * from Employee partition(p4);
