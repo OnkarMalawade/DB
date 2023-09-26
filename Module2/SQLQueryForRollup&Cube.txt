@@ -1,0 +1,69 @@
+create table emp(id int primary key,
+name varchar(50),
+gender varchar(20),
+salary int,
+department varchar(50));
+
+insert into emp values(1,'Rupali','female',10000,'IT');
+insert into emp values(2,'Rani','female',6000,'HR');
+insert into emp values(3,'Zheny','female',7500,'IT');
+insert into emp values(4,'Raju','male',6500,'markating');
+insert into emp values(5,'Aditi','female',5500,'finance');
+insert into emp values(6,'IronMan','male',8000,'sales');
+insert into emp values(7,'Chris','male',7200,'HR');
+insert into emp values(8,'Sita','female',6600,'finance');
+insert into emp values(9,'Anarkali','female',5400,'markating');
+insert into emp values(10,'Siddi','female',6300,'finance');
+insert into emp values(11,'Tim David','male',5700,'sales');
+insert into emp values(12,'Raju','male',7000,'HR');
+insert into emp values(13,'Adnya','female',7100,'IT');
+insert into emp values(14,'Aditya','male',6800,'markating');
+insert into emp values(15,'Onkar','male',5000,'IT');
+
+select * from emp;
+
+select department, sum(salary) from emp Group By department;
+
+select department, sum(salary) from emp Group By rollup(department);
+
+select coalesce(department, 'Total'), sum(salary) from emp Group By rollup(department);
+
+select coalesce(department, 'All Departments'), sum(salary) from emp Group By rollup(department,gender);
+
+select coalesce(department, 'Total'), sum(salary) from emp Group By rollup(department, gender);
+
+select coalesce(department, 'Sub Total'),coalesce(gender,'Total'), sum(salary) from emp Group By Rollup(department, gender);
+
+select coalesce(department, 'Total'), sum(salary) from emp Group By cube(department, gender);
+
+select coalesce(department, 'Sub Total'),coalesce(gender,'Total'), sum(salary) from emp Group By cube(department, gender);
+
+select coalesce(department, 'Total',gender), sum(salary) from emp Group By cube(department, gender);
+
+select department, avg(salary) from emp Group By department;
+
+select department, avg(salary) from emp Group By rollup(department);
+
+select coalesce(department, 'Total'), avg(salary) from emp Group By rollup(department);
+
+select coalesce(department, 'All Departments'), avg(salary) from emp Group By rollup(department,gender);
+
+select coalesce(department, 'Total'), avg(salary) from emp Group By rollup(department, gender);
+
+select coalesce(department, 'Sub Total'),coalesce(gender,'Total'), avg(salary) from emp Group By Rollup(department, gender);
+
+select coalesce(department, 'Total'), avg(salary) from emp Group By cube(department, gender);
+
+select coalesce(department, 'Sub Total'),coalesce(gender,'Total'), avg(salary) from emp Group By cube(department, gender);
+
+select coalesce(department, 'Total',gender), avg(salary) from emp Group By cube(department, gender);
+
+select min(salary) from emp;
+
+select department, min(salary) from emp Group By department;
+
+select department, max(salary) from emp Group By rollup(department);
+
+select department, max(salary) from emp Group By department;
+
+select department, min(salary) from emp Group By rollup(department);
