@@ -1,0 +1,49 @@
+create table Employe(
+    empid int primary key,
+    empname varchar(50),
+    deptid int,
+    salary int
+);
+
+insert into Employe values(1,'Onkar',100,100000);
+insert into Employe values(2,'Aditya',200,345000);
+insert into Employe values(3,'Vishal',300,890000);
+insert into Employe values(4,'Rahul',100,780000);
+insert into Employe values(5,'Karan',300,500000);
+insert into Employe values(6,'Arjun',300,450000);
+insert into Employe values(7,'JrNTR',200,980000);
+insert into Employe values(8,'Allu',200,990000);
+
+select * from Employe;
+
+select empid,empname,deptid,salary,rank() over(order by salary desc) as rank from Employe;
+
+select empid,empname,deptid,salary,rank() over(order by salary desc) as rank,
+    dense_rank() over(order by salary desc) as dense_rank
+from Employe;
+
+select empid,empname,deptid,salary,rank() over(order by salary desc) as rank,
+    dense_rank() over(order by salary desc) as dense_rank,
+    row_number() over(order by salary desc) as rownumber
+from Employe;
+
+select empid,empname,deptid,salary,rank() over(order by salary desc) as rank,
+    ntile(3) over(order by salary desc) as ntile
+from Employe;
+
+select empid,empname,deptid,salary,rank() over(partition by deptid order by salary desc) as rank,
+    dense_rank() over(partition by deptid order by salary desc) as dense_rank,
+    row_number() over(partition by deptid order by salary desc) as rownumber
+from Employe;
+
+select * from(
+    select empid, empname, deptid, salary , rank() 
+    over(partition by deptid order by salary desc) 
+    as rank from Employe a
+) where rank = 1;
+
+select * from(
+    select empid, empname, deptid, salary , dense_rank() 
+    over(partition by deptid order by salary asc) 
+    as rank from Employe a
+) where rank = 1;
