@@ -47,3 +47,19 @@ select * from(
     over(partition by deptid order by salary asc) 
     as rank from Employe a
 ) where rank = 1;
+
+select * from(
+    select empid, empname, deptid, salary , dense_rank() 
+    over(partition by deptid order by salary asc) 
+    as rank from Employe a
+) where rank = 2;
+
+select * from(
+    select empid, empname, deptid, salary , dense_rank() 
+    over(partition by deptid order by salary asc) 
+    as rank from Employe a
+) where rank = 3;
+
+select empid, empname, deptid, salary , dense_rank() 
+    over(partition by deptid order by salary asc) 
+    as dense_rank from Employe;
