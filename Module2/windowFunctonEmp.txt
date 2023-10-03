@@ -18,3 +18,37 @@ insert into employee values(107, 3, 3, 21, 900,2007);
 insert into employee values(108, 2, 3, 21, 290,2008);
 insert into employee values(109, 1, 2, 21, 150,2009);
 insert into employee values(110, 2, 2, 21, 4000,2010);
+
+select * from employee;
+
+select dept, sum(sales) from employee group by dept;
+
+select empid, prod_id, dept, sum(sales) from employee group by dept;
+
+select empid, prod_id, sum(sales) over() as Total_Sales from employee;
+
+select empid, prod_id, avg(sales) over() as avg_Sales from employee;
+
+select empid, prod_id, sum(sales) over(order by sales asc) as Total_Sales from employee;
+
+select empid, prod_id, avg(sales) over(order by sales asc) as avg_Sales from employee;
+
+select empid, prod_id, sum(sales) over() as Total_Sales, avg(sales) over() as avg_Sales from employee;
+
+select empid, prod_id, sum(sales) over(partition by dept) as Total_Sales from employee;
+
+select empid, prod_id, sum(sales) over()as Total_Sales , Lag(sales) over(order by dept asc) as Prev_year from employee;
+
+select empid, prod_id, sum(sales) over()as Total_Sales , Lead(sales) over(order by dept asc) as Next_year from employee;
+
+select empid, prod_id, sum(sales) over()as Total_Sales ,
+    Lead(sales) over(order by dept asc) as Next_year ,
+    Lag(sales) over(order by dept asc) as Prev_year from employee;
+
+select empid, prod_id, sales, sum(sales) over()as Total_Sales , first_value(sales) over() as first_value from employee;
+
+select empid, prod_id, sales, sum(sales) over()as Total_Sales , last_value(sales) over() as last_value from employee;
+
+select empid, prod_id, sales, sum(sales) over()as Total_Sales ,
+    first_value(sales) over() as first_value ,
+    last_value(sales) over() as last_value from employee;
