@@ -1,0 +1,39 @@
+create table dept(
+    deptno number(2,0),
+    dname varchar2(14),
+    loc varchar2(13),
+    constraint pk_dept primary key(deptno)
+);
+
+create table emp(
+    empno number(4,0),
+    empname varchar2(10),
+    job varchar2(9),
+    mgr number(4,0),
+    hiredate date,
+    sal number(7,2),
+	comm number(7,2),
+    deptno number(2,0),
+    constraint pk_emp primary key(empno),
+    constraint fk_deptno foreign key(deptno) references dept(deptno)
+);
+
+insert into dept values(10,'Sales','Dubai');
+insert into dept values(11,'HR','USA');
+insert into dept values(12,'Finance','UK');
+insert into dept values(13,'IT','Bharat');
+
+insert into emp values(101,'Onkar','Soft.Dev',201,to_date('10-12-2023','dd-mm-yyyy'),10000,123,13);
+insert into emp values(102,'Vishal','Soft.Dev',201,to_date('30-12-2023','dd-mm-yyyy'),20000,123,12);
+insert into emp values(103,'Aditya','Soft.Dev',201,to_date('10-11-2023','dd-mm-yyyy'),30000,123,13);
+insert into emp values(104,'Rahul','Soft.Dev',201,to_date('10-2-2023','dd-mm-yyyy'),10300,123,11);
+insert into emp values(105,'Suyash','Soft.Dev',201,to_date('1-2-2023','dd-mm-yyyy'),10400,123,10);
+insert into emp values(106,'Yash','Soft.Dev',201,to_date('13-2-2023','dd-mm-yyyy'),10030,123,13);
+insert into emp values(107,'Aniket','Soft.Dev',201,to_date('1-8-2023','dd-mm-yyyy'),10200,123,12);
+insert into emp values(108,'Amey','Soft.Dev',201,to_date('10-9-2023','dd-mm-yyyy'),10430,123,10);
+
+select * from emp;
+
+SELECT emp.empno, emp.empname, emp.sal, dept.dname
+FROM emp
+INNER JOIN dept ON dept.deptno = emp.deptno;
