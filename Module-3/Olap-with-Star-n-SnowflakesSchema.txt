@@ -428,3 +428,10 @@ select i.item_name, l.city,sum(s.units_sold)
 	left join loc l on s.loc_key = l.loc_key
 	left join times t on s.time_Key = t.time_Key
 group by( i.item_name,l.city);
+
+select i.item_name, l.city,t.quater,sum(s.units_sold)
+    as country_sales from salesfact s
+	left join items i on s.items_key = i.items_key
+	left join loc l on s.loc_key = l.loc_key
+	left join times t on s.time_Key = t.time_Key
+group by cube( i.item_name,l.city, t.quater);
