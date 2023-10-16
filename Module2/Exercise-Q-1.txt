@@ -1,0 +1,36 @@
+CREATE TABLE department (
+  deptno NUMBER(2,0),
+  dname VARCHAR2(14),
+  loc VARCHAR2(13),
+  CONSTRAINT pk_dept PRIMARY KEY (deptno)
+);
+
+CREATE TABLE employee (
+  empno NUMBER(4,0),
+  ename VARCHAR2(10),
+  job VARCHAR2(9),
+  mgr NUMBER(4,0),
+  hiredate DATE,
+  sal NUMBER(7,2),
+  comm NUMBER(7,2),
+  deptno NUMBER(2,0),
+  CONSTRAINT pk_emp PRIMARY KEY (empno),
+  CONSTRAINT fk_deptno FOREIGN KEY (deptno) REFERENCES department (deptno)
+);
+
+insert into department values(10,'Sales','Dubai');
+insert into department values(11,'HR','USA');
+insert into department values(12,'Finance','UK');
+insert into department values(13,'IT','Bharat');
+
+insert into employee values(101,'Onkar','Soft.Dev',201,to_date('10-12-2023','dd-mm-yyyy'),10000,123,13);
+insert into employee values(102,'Vishal','Soft.Dev',201,to_date('30-12-2023','dd-mm-yyyy'),20000,123,12);
+insert into employee values(103,'Aditya','Soft.Dev',201,to_date('10-11-2023','dd-mm-yyyy'),30000,123,13);
+insert into employee values(104,'Rahul','Soft.Dev',201,to_date('10-2-2023','dd-mm-yyyy'),10300,123,11);
+insert into employee values(105,'Suyash','Soft.Dev',201,to_date('1-2-2023','dd-mm-yyyy'),10400,123,10);
+insert into employee values(106,'Yash','Soft.Dev',201,to_date('13-2-2023','dd-mm-yyyy'),10030,123,13);
+insert into employee values(107,'Aniket','Soft.Dev',201,to_date('1-8-2023','dd-mm-yyyy'),10200,123,12);
+insert into employee values(108,'Amey','Soft.Dev',201,to_date('10-9-2023','dd-mm-yyyy'),10430,123,10);
+
+SELECT deptno, MIN(salary) AS first_salary
+FROM employee GROUP BY deptno;
