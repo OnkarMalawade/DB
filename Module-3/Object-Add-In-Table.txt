@@ -1,0 +1,11 @@
+-- Create Object of Student
+create type student as object(
+    name varchar2(50),
+    phoneNum varchar2(10)
+);
+
+-- Create table that contains Object 
+create table student_table of student;
+
+-- Extract Data from the student_table of student Object
+select s.name, s.phoneNum from student_table s;
