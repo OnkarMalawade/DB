@@ -8,6 +8,7 @@
     param datatype,
      ...
    }
+   > 
 2. Create Object Syntax:
    =====================
    > Create type <type-name> as Object(
