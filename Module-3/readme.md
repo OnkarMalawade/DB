@@ -4,8 +4,13 @@
 
 1. Create ADT Object Syntax:
    =========================
-  Create or Replace type <type-name> as Object {
+   > Create or Replace type <type-name> as Object {
     param datatype,
      ...
    }
-2. Create 
+2. Create Object Syntax:
+   =====================
+   > Create type <type-name> as Object(
+     param datatype,
+     ...
+   );
