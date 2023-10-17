@@ -1,0 +1,24 @@
+-- Create Abstract Object
+create or replace type address as object (
+    street varchar(50),
+    city varchar(50),
+    states varchar(2),
+    zip int
+);
+
+-- Create Table with ADT address Object
+create table person(
+    first_name varchar(60),
+    last_name varchar(60),
+    full_address address
+);
+
+-- Insert Value into Person Table with ADT
+insert into person values('Onkar','Malawade',address('Talere','Kankawali','MH',416801));
+insert into person values('Aditya','Shinde',address('Shirgoan','Devgad','MH',416801));
+insert into person values('Omkar','Vele',address('Pune','Kankawali','GJ',415841));
+insert into person values('Rahul','Pawar',address('Tere','Kankawali','HY',516401));
+insert into person values('Rakesh','Kazi',address('Tika','Kankawali','GO',116801));
+
+-- ADT
+select p.first_name,p.last_name,p.full_address.city,p.full_address.street,p.full_address.zip,p.full_address.states from person p;
