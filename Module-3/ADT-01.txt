@@ -1,11 +1,70 @@
 -- Create ADT Object
+create or replace type stdinfo_address as object (
+    street varchar(50),
+    city varchar(50),
+    states varchar(2),
+    zip int
+);
 
+create or replace type stdinfo_contact as object (
+    phone_num varchar(10),
+    family_num varchar(10)
+);
 
 -- Create table that contains the ADT Object Return Table 
-
+create table stdinfo (
+    fname varchar(20),
+    lname varchar(20),
+    stdAdd stdinfo_address,
+    stdCon stdinfo_contact
+);
 
 -- Insert Values into the Table with ADT Object
 
+insert into stdinfo values(
+    'Onkar',
+    'Malawade',
+    stdinfo_address('Talere','Kanakawali','MH',416801),
+    stdinfo_contact('7020767185','9518951121')
+);
+insert into stdinfo values(
+    'Aditya',
+    'Shinde',
+    stdinfo_address('Shirgoan','Devgad','MH',416810),
+    stdinfo_contact('7020767186','4518951121')
+);
+insert into stdinfo values(
+    'Rahul',
+    'Khadekar',
+    stdinfo_address('Sakharpa','Ratangiri','MH',415801),
+    stdinfo_contact('7020767185','9518951121')
+);
+insert into stdinfo values(
+    'Vishal',
+    'Jogale',
+    stdinfo_address('Sakharpa','Ratangiri','MH',415801),
+    stdinfo_contact('7020547185','9515451121')
+);
+insert into stdinfo values(
+    'Aditya',
+    'Main',
+    stdinfo_address('Sakharpa','Ratangiri','MH',415801),
+    stdinfo_contact('7020767985','95187951121')
+);
+insert into stdinfo values(
+    'Saurabh',
+    'Shukla',
+    stdinfo_address('Rankala','Kalhapur','MH',456781),
+    stdinfo_contact('7078945185','9517541121')
+);
 
 -- Select Values from an ADT Object and Table
-
+select s.fname,
+    s.lname,
+    s.stdAdd.city,
+    s.stdAdd.street,
+    s.stdAdd.zip,
+    s.stdAdd.states,
+    s.stdCon.phone_num,
+    s.stdCon.family_num
+from stdinfo s;
