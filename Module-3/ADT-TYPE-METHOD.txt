@@ -109,3 +109,6 @@ insert into engineer values(5,'Sneha','Goa','22-Jun-2008',30000,'Sr');
 select * from engineer;
 select e.cal_sal() from engineer e;
 select e.ename , e.cal_sal() from engineer e;
+select e.emp_type() from engineer e;
+select e.ename , e.emp_type() from engineer e;
+select e.ename , e.emp_type() , e.cal_sal() from engineer e;
