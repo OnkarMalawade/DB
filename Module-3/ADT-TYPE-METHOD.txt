@@ -85,4 +85,27 @@ create type eng under emp
     eng_type varchar2(10),
     Member function emp_type return varchar2
 );
-create type eng 
+
+-- Type Created.
+
+-- create body of the subtype
+create type body eng as
+	Member function emp_type return varchar2 is
+	Begin
+		return 'Engineer';
+	end;
+end;
+
+create table engineer of eng;
+
+-- Insert / Add values into the table
+insert into engineer values(1,'Onkar','Goa','22-Dec-2008',30000,'Sr');
+insert into engineer values(2,'Swapnali','Kolhapur','2-Dec-2008',30000,'Sr');
+insert into engineer values(3,'Aditya','Goa','22-May-2008',30000,'Sr');
+insert into engineer values(4,'Pandu','Dubai','22-Dec-2008',30000,'Sr');
+insert into engineer values(5,'Sneha','Goa','22-Jun-2008',30000,'Sr');
+
+-- select data from engineer table that is inherit emp table
+select * from engineer;
+select e.cal_sal() from engineer e;
+select e.ename , e.cal_sal() from engineer e;
