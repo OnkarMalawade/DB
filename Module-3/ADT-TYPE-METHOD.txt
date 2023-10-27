@@ -1,0 +1,56 @@
+Create type employee_t as Object(
+  	name varchar2(30),
+    ssn varchar2(30),
+    salary NUMBER,
+    member function raise_sal 
+    	return number
+);
+
+-- TYPE CREATED..
+create type body employee_t as
+    Member function raise_sal return Number is 
+		Begin 
+			return salary*2;
+		end;
+end;
+
+-- TYPE CREATED..
+
+-- Query For the Table Creation:
+
+create table emp2 of employee_t;
+
+-- Add / Insert Elements into the emp2 table
+
+insert into emp2 values(
+    employee_t('Frank','12345',1000)
+);
+insert into emp2 values(
+    employee_t('Onkar','15645',1300)
+);
+insert into emp2 values(
+    employee_t('Adi','154345',3000)
+);
+insert into emp2 values(
+    employee_t('Raju','124545',2000)
+);
+insert into emp2 values(
+    employee_t('AAfan','12655',1600)
+);
+
+-- Select elements from the table
+
+select * from emp2;
+select e.raise_sal() from emp2 e;
+select e.name , e.raise_sal() from emp2 e;
+
+-- DataType: Super type Emp
+
+create type emp as object(
+	eid number, 
+    ename varchar2(30), 
+    emp_addr varchar2(10),
+    doj date,
+    salary number,
+    MEMBER Function cal_sal Return number
+)not final; 
