@@ -54,3 +54,35 @@ create type emp as object(
     salary number,
     MEMBER Function cal_sal Return number
 )not final; 
+
+-- Create Body of member function
+
+
+create type body emp as 
+	member function cal_sal return number is 
+	begin 
+		return salary;
+	end;
+end;
+
+create table employee of emp;
+
+insert into employee values(emp(101,'Onkar','Talere','12-May-2020',200000));
+insert into employee values(emp(102,'Adi','Tale','12-May-2010',22300));
+insert into employee values(emp(103,'Om','kale','12-May-2022',2034200));
+insert into employee values(emp(104,'Raju','Goa','12-May-2012',2000));
+insert into employee values(emp(105,'Pandu','Pune','12-May-2000',202300));
+
+select * from employee;
+select e.cal_sal() from employee e;
+select e.ename , e.cal_sal() from employee e;
+
+-- create subtype it is simply we can say that it is inheritance
+-- supertype is emp and subtype is eng
+
+create type eng under emp
+(
+    eng_type varchar2(10),
+    Member function emp_type return varchar2
+);
+create type eng 
