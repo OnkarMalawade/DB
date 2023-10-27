@@ -15,3 +15,10 @@
      param datatype,
      ...
    );
+
+3. Create Abstract data Methods:
+   =====================
+   > Create type <type-name> as Object(
+     param datatype,
+     ...
+   );
