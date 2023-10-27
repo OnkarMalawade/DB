@@ -1,0 +1,22 @@
+CREATE TABLE MyTable (
+	  id INT PRIMARY KEY,
+    clob_column CLOB NOT NULL
+);
+
+INSERT INTO MyTable(id, clob_column) VALUES (1, EMPTY_CLOB());
+INSERT INTO MyTable(id, clob_column) VALUES (101,to_clob('hello'));
+INSERT INTO MyTable(id, clob_column) VALUES (102,to_clob('hi'));
+INSERT INTO MyTable(id, clob_column) VALUES (103,to_clob('hey'));
+INSERT INTO MyTable(id, clob_column) VALUES (104,to_clob('Namste'));
+
+UPDATE MyTable
+SET clob_column = 'AAAAA'
+WHERE id = 1;
+
+SELECT * FROM MyTable;
+
+-- Select a CLOB from a table.
+SELECT * FROM MyTable WHERE id = 1;
+
+-- Search for a pattern in a CLOB.
+SELECT * FROM MyTable WHERE clob_column LIKE '%hello%';
