@@ -466,7 +466,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>12;23;45</nullif>
+        <nullif>12;34;67</nullif>
         <length>29</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -511,6 +511,12 @@
       <field>
         <name>num1</name>
       </field>
+      <field>
+        <name>num12</name>
+      </field>
+      <field>
+        <name>num13</name>
+      </field>
     </fields>
     <attributes/>
     <cluster_schema/>
@@ -543,6 +549,36 @@
     <fields>
       <field>
         <name>num1</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>none</trimtype>
+      </field>
+      <field>
+        <name>num12</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>none</trimtype>
+      </field>
+      <field>
+        <name>num13</name>
         <id/>
         <idrem>N</idrem>
         <type>String</type>
