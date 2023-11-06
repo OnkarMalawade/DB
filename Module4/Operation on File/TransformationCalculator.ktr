@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>TransformationCsv</name>
+    <name>TransformationCalculator</name>
     <description/>
     <extended_description/>
     <trans_version/>
     <trans_type>Normal</trans_type>
-    <trans_status>0</trans_status>
     <directory>/</directory>
     <parameters>
     </parameters>
@@ -428,9 +427,9 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>-</created_user>
-    <created_date>2023/11/06 10:26:50.005</created_date>
+    <created_date>2023/11/06 09:55:33.389</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2023/11/06 10:26:50.005</modified_date>
+    <modified_date>2023/11/06 09:55:33.389</modified_date>
     <key_for_session_key/>
     <is_key_private>N</is_key_private>
   </info>
@@ -438,19 +437,19 @@
   </notepads>
   <order>
     <hop>
-      <from>CSV file input</from>
+      <from>calculator</from>
       <to>Sort rows</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Sort rows</from>
-      <to>Add sequence</to>
+      <to>Calculator 2</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>CSV file input</name>
-    <type>CsvInput</type>
+    <name>calculator</name>
+    <type>DataGrid</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -459,66 +458,62 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>C:\Users\student\Downloads\custsales.csv.csv</filename>
-    <filename_field/>
-    <rownum_field/>
-    <include_filename>N</include_filename>
-    <separator>,</separator>
-    <enclosure>"</enclosure>
-    <header>Y</header>
-    <buffer_size>50000</buffer_size>
-    <lazy_conversion>Y</lazy_conversion>
-    <add_filename_result>N</add_filename_result>
-    <parallel>N</parallel>
-    <newline_possible>N</newline_possible>
-    <format>mixed</format>
-    <encoding/>
     <fields>
       <field>
-        <name>id</name>
-        <type>String</type>
+        <name>var1</name>
+        <type>Number</type>
         <format/>
         <currency/>
         <decimal/>
         <group/>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>none</trim_type>
+        <set_empty_string>N</set_empty_string>
+        <field_null_if/>
       </field>
       <field>
-        <name>firstname</name>
-        <type>String</type>
+        <name>var2</name>
+        <type>Number</type>
         <format/>
         <currency/>
         <decimal/>
         <group/>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>lastname</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>sales</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
+        <set_empty_string>N</set_empty_string>
+        <field_null_if/>
       </field>
     </fields>
+    <data>
+      <line>
+        <item>10</item>
+        <item>12</item>
+      </line>
+      <line>
+        <item>21</item>
+        <item>12</item>
+      </line>
+      <line>
+        <item>123</item>
+        <item>123</item>
+      </line>
+      <line>
+        <item>2</item>
+        <item>3</item>
+      </line>
+      <line>
+        <item>23</item>
+        <item>43</item>
+      </line>
+      <line>
+        <item>21</item>
+        <item>44</item>
+      </line>
+      <line>
+        <item>67</item>
+        <item>90</item>
+      </line>
+    </data>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -528,8 +523,124 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>304</xloc>
-      <yloc>112</yloc>
+      <xloc>256</xloc>
+      <yloc>192</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Calculator 2</name>
+    <type>Calculator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <failIfNoFile>Y</failIfNoFile>
+    <calculation>
+      <field_name>addition</field_name>
+      <calc_type>ADD</calc_type>
+      <field_a>var1</field_a>
+      <field_b>var2</field_b>
+      <field_c>addition</field_c>
+      <value_type>String</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <calculation>
+      <field_name>sub</field_name>
+      <calc_type>SUBTRACT</calc_type>
+      <field_a>var1</field_a>
+      <field_b>var2</field_b>
+      <field_c>sub</field_c>
+      <value_type>String</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <calculation>
+      <field_name>multi</field_name>
+      <calc_type>MULTIPLY</calc_type>
+      <field_a>var1</field_a>
+      <field_b>var2</field_b>
+      <field_c>multi</field_c>
+      <value_type>String</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <calculation>
+      <field_name>div</field_name>
+      <calc_type>DIVIDE</calc_type>
+      <field_a>var1</field_a>
+      <field_b>var2</field_b>
+      <field_c>div</field_c>
+      <value_type>String</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <calculation>
+      <field_name>sqr</field_name>
+      <calc_type>SQUARE</calc_type>
+      <field_a>var1</field_a>
+      <field_b/>
+      <field_c>sqr</field_c>
+      <value_type>String</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <calculation>
+      <field_name>sqrt</field_name>
+      <calc_type>SQUARE_ROOT</calc_type>
+      <field_a>var1</field_a>
+      <field_b/>
+      <field_c>sqrt</field_c>
+      <value_type>String</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>624</xloc>
+      <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -553,7 +664,7 @@
     <unique_rows>N</unique_rows>
     <fields>
       <field>
-        <name>firstname</name>
+        <name>var1</name>
         <ascending>Y</ascending>
         <case_sensitive>N</case_sensitive>
         <collator_enabled>N</collator_enabled>
@@ -570,43 +681,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>512</xloc>
-      <yloc>112</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Add sequence</name>
-    <type>Sequence</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <valuename>valuename</valuename>
-    <use_database>N</use_database>
-    <connection/>
-    <schema/>
-    <seqname>SEQ_</seqname>
-    <use_counter>Y</use_counter>
-    <counter_name/>
-    <start_at>1</start_at>
-    <increment_by>1</increment_by>
-    <max_value>999999999</max_value>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>736</xloc>
-      <yloc>112</yloc>
+      <xloc>448</xloc>
+      <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>TransformationCsv</name>
+    <name>TransformationDataGrid</name>
     <description/>
     <extended_description/>
     <trans_version/>
     <trans_type>Normal</trans_type>
-    <trans_status>0</trans_status>
     <directory>/</directory>
     <parameters>
     </parameters>
@@ -428,9 +427,9 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>-</created_user>
-    <created_date>2023/11/06 10:26:50.005</created_date>
+    <created_date>2023/11/06 09:44:48.335</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2023/11/06 10:26:50.005</modified_date>
+    <modified_date>2023/11/06 09:44:48.335</modified_date>
     <key_for_session_key/>
     <is_key_private>N</is_key_private>
   </info>
@@ -438,19 +437,14 @@
   </notepads>
   <order>
     <hop>
-      <from>CSV file input</from>
-      <to>Sort rows</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Sort rows</from>
+      <from>Data grid</from>
       <to>Add sequence</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>CSV file input</name>
-    <type>CsvInput</type>
+    <name>Data grid</name>
+    <type>DataGrid</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -459,34 +453,21 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>C:\Users\student\Downloads\custsales.csv.csv</filename>
-    <filename_field/>
-    <rownum_field/>
-    <include_filename>N</include_filename>
-    <separator>,</separator>
-    <enclosure>"</enclosure>
-    <header>Y</header>
-    <buffer_size>50000</buffer_size>
-    <lazy_conversion>Y</lazy_conversion>
-    <add_filename_result>N</add_filename_result>
-    <parallel>N</parallel>
-    <newline_possible>N</newline_possible>
-    <format>mixed</format>
-    <encoding/>
     <fields>
       <field>
-        <name>id</name>
-        <type>String</type>
+        <name>stdid</name>
+        <type>Number</type>
         <format/>
         <currency/>
         <decimal/>
         <group/>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>none</trim_type>
+        <set_empty_string>N</set_empty_string>
+        <field_null_if/>
       </field>
       <field>
-        <name>firstname</name>
+        <name>sname</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -494,21 +475,47 @@
         <group/>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>none</trim_type>
+        <set_empty_string>N</set_empty_string>
+        <field_null_if/>
       </field>
       <field>
-        <name>lastname</name>
-        <type>String</type>
-        <format/>
+        <name>dob</name>
+        <type>Date</type>
+        <format>dd-MM-yyyy</format>
         <currency/>
         <decimal/>
         <group/>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>none</trim_type>
+        <set_empty_string>N</set_empty_string>
+        <field_null_if/>
       </field>
       <field>
-        <name>sales</name>
+        <name>marks</name>
+        <type>Number</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <field_null_if/>
+      </field>
+      <field>
+        <name>percentage</name>
+        <type>Number</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <field_null_if/>
+      </field>
+      <field>
+        <name>areaOfInterest</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -516,9 +523,52 @@
         <group/>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>none</trim_type>
+        <set_empty_string>N</set_empty_string>
+        <field_null_if/>
       </field>
     </fields>
+    <data>
+      <line>
+        <item>101</item>
+        <item>Onkar</item>
+        <item>30-05-2000</item>
+        <item>100</item>
+        <item>100</item>
+        <item>Coding</item>
+      </line>
+      <line>
+        <item>102</item>
+        <item>Aniket</item>
+        <item>10-02-2001</item>
+        <item>100</item>
+        <item>100</item>
+        <item>Cricket</item>
+      </line>
+      <line>
+        <item>103</item>
+        <item>Raju</item>
+        <item>10-12-1999</item>
+        <item>100</item>
+        <item>100</item>
+        <item>Hockey</item>
+      </line>
+      <line>
+        <item>104</item>
+        <item>Aditya</item>
+        <item>10-11-2002</item>
+        <item>130</item>
+        <item>100</item>
+        <item>Football</item>
+      </line>
+      <line>
+        <item>105</item>
+        <item>Yash</item>
+        <item>12-01-1989</item>
+        <item>50</item>
+        <item>12</item>
+        <item>InstagramReel</item>
+      </line>
+    </data>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -528,50 +578,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>304</xloc>
-      <yloc>112</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Sort rows</name>
-    <type>SortRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <directory>%%java.io.tmpdir%%</directory>
-    <prefix>out</prefix>
-    <sort_size>1000000</sort_size>
-    <free_memory/>
-    <compress>N</compress>
-    <compress_variable/>
-    <unique_rows>N</unique_rows>
-    <fields>
-      <field>
-        <name>firstname</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <collator_enabled>N</collator_enabled>
-        <collator_strength>0</collator_strength>
-        <presorted>N</presorted>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>512</xloc>
-      <yloc>112</yloc>
+      <xloc>128</xloc>
+      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -586,7 +594,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <valuename>valuename</valuename>
+    <valuename>addSequence</valuename>
     <use_database>N</use_database>
     <connection/>
     <schema/>
@@ -605,8 +613,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>736</xloc>
-      <yloc>112</yloc>
+      <xloc>336</xloc>
+      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
