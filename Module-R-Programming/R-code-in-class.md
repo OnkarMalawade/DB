@@ -115,6 +115,20 @@ Mathematical functions
 > nchar(str)
 [1] 10
 
-> 
+Checking a String
+=================
+> str = "HelloWorld"; 
+> nchar(str)
+[1] 10
+
+> grepl("H",str)
+[1] TRUE
+
+> grepl("Hello",str)
+[1] TRUE
+
+> grepl("Onkar",str)
+[1] FALSE
+
 
 
