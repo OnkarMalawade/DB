@@ -1,6 +1,8 @@
 Code:
 =====
 ***R Console codes***
+=====================
+
 Print Operation
 ===============
 > print("Hello World")
@@ -66,3 +68,24 @@ For Loop
 [1] 9
 [1] 10
 
+Class or we can say Datatypes of given variables from the class() method:-
+=============================================================
+> x<-10.5
+> class(x)
+[1] "numeric"
+> x<-1000L
+> class(x)
+[1] "integer"
+> x <- 9i + 3
+> class(x)
+[1] "complex"
+> x <- "R is Exists"
+> class(x)
+[1] "character"
+> x <- TRUE
+> class(x)
+[1] "logical"
+
+
+Mathematical functions
+=================
