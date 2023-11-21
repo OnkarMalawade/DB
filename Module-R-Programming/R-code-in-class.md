@@ -89,3 +89,13 @@ Class or we can say Datatypes of given variables from the class() method:-
 
 Mathematical functions
 =================
+> max(10,23,32)
+[1] 32
+> min(12,1,3)
+[1] 1
+> abs(-4.12)
+[1] 4.12
+> sqrt(25)
+[1] 5
+> 
+
