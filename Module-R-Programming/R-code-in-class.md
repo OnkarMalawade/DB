@@ -146,4 +146,26 @@ Formatting
 > print(res3)
 [1] "   Onkar"
 
+> format(13.7)
+[1] "13.7"
+
+> format(13.7,nsmall=3)
+[1] "13.700"
+
+> format(13.7,nsmall=2)
+[1] "13.70"
+
+> format(13.7,6.07,digits=2)
+[1] "14"
+
+> format(13.7,6.07,digits=2,nsmall=1)
+[1] "13.7"
+
+> format(2^31-1)
+[1] "2147483647"
+
+> format(2^31-1,scientific=TRUE)
+[1] "2.147484e+09"
+
+ 
 
