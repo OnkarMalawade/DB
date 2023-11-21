@@ -130,5 +130,20 @@ Checking a String
 > grepl("Onkar",str)
 [1] FALSE
 
+Formatting
+===========
+
+> res1 = format("Onkar",width=8,justify="l")
+> res2 = format("Onkar",width=8,justify="c")
+> res3 = format("Onkar",width=8,justify="r")
+
+> print(res1)
+[1] "Onkar   "
+
+> print(res2)
+[1] " Onkar  "
+
+> print(res3)
+[1] "   Onkar"
 
 
