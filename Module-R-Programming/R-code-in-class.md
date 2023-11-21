@@ -146,7 +146,7 @@ Formatting
 > print(res3)
 [1] "   Onkar"
 
-# Use of Scientific Format
+# Use of nsmall Format
 ==========================
 
 > format(13.7)
@@ -164,6 +164,8 @@ Formatting
 > format(13.7,6.07,digits=2,nsmall=1)
 [1] "13.7"
 
+# Use of Scientific Format
+==========================
 > format(2^31-1)
 [1] "2147483647"
 
