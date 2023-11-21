@@ -146,6 +146,9 @@ Formatting
 > print(res3)
 [1] "   Onkar"
 
+# Use of Scientific Format
+==========================
+
 > format(13.7)
 [1] "13.7"
 
