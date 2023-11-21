@@ -172,5 +172,15 @@ Formatting
 > format(2^31-1,scientific=TRUE)
 [1] "2.147484e+09"
 
- 
+ Use of Text Formatting
+ ====================
+> text1 = "Onkar"
+
+> toupper(text1)
+[1] "ONKAR"
+
+> tolower(text1)
+[1] "onkar"
+> 
+
 
