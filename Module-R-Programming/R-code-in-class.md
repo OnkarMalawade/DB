@@ -48,4 +48,21 @@ String Concatenation
 [1] "Hello!!! Onkar!!!"
 > paste(text1,text2,"Malawade")
 [1] "Hello!!! Onkar!!! Malawade"
-> 
+
+For Loop
+========
+> for (x in 1 : 10){
++ print(x)
++ }
+
+[1] 1
+[1] 2
+[1] 3
+[1] 4
+[1] 5
+[1] 6
+[1] 7
+[1] 8
+[1] 9
+[1] 10
+
