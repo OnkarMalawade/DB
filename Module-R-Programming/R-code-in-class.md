@@ -73,15 +73,19 @@ Class or we can say Datatypes of given variables from the class() method:-
 > x<-10.5
 > class(x)
 [1] "numeric"
+
 > x<-1000L
 > class(x)
 [1] "integer"
+
 > x <- 9i + 3
 > class(x)
 [1] "complex"
+
 > x <- "R is Exists"
 > class(x)
 [1] "character"
+
 > x <- TRUE
 > class(x)
 [1] "logical"
@@ -91,11 +95,26 @@ Mathematical functions
 =================
 > max(10,23,32)
 [1] 32
+
 > min(12,1,3)
 [1] 1
+
 > abs(-4.12)
 [1] 4.12
+
 > sqrt(25)
 [1] 5
+
+> ceiling(4.5)
+[1] 5
+
+> floor(4.5)
+[1] 4
+
+>  str = "HelloWorld";
+> nchar(str)
+[1] 10
+
 > 
+
 
