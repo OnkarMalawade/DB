@@ -22,38 +22,38 @@ Add values to variables
 
 > var2 <- 987654
 > var2
-[1] 987654
+ 987654
 
 > res <- var1 + var2
 > res
-[1] 2222221
+ 2222221
 
 > res <- var1 
 > res
-[1] 1234567
+ 1234567
 
 > res <- var1 * var2 + var1
 > res
-[1] 1.219326e+12
+ 1.219326e+12
 
 > res = res / 100000098
 > res
-[1] 12193.25
+ 12193.25
 
 String Concatenation
 ====================
 > text1 = "Hello!!!"
 > text2 = "Onkar!!!"
 > paste(text1,text2)
-[1] "Hello!!! Onkar!!!"
+ "Hello!!! Onkar!!!"
 > paste(text1,text2,"Malawade")
-[1] "Hello!!! Onkar!!! Malawade"
+ "Hello!!! Onkar!!! Malawade"
 
 For Loop
 ========
-> for (x in 1 : 10){
-+ print(x)
-+ }
+ for (x in 1 : 10){
+ print(x)
+ }
 
 [1] 1
 [1] 2
