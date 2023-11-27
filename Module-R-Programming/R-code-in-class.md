@@ -279,7 +279,18 @@ Using c() function : Vector with String Values
 
 Using (:) = Vector with Numeric Values
 -------------------------------------
-
+<p>
+ > numbers <- 1:10<br>
+> numbers<br>
+ [1]  1  2  3  4  5  6  7  8  9 10<br>
+> numbers <- 1.4 : 5.4<br>
+> numbers<br>
+[1] 1.4 2.4 3.4 4.4 5.4<br>
+> numbers <- 1.4 : 5.6<br>
+> numbers<br>
+[1] 1.4 2.4 3.4 4.4 5.4<br>
+> 
+</p>
 Vector Length() Fuction
 ----------------------
 
