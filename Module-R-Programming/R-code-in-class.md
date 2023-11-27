@@ -392,4 +392,48 @@ R Factors
 
 > They can store both strings and integers.
 
-> To create a factor, use factor() function and add a vector as argument. 
+ To create a factor, use factor() function and add a vector as argument:
+ ---------------------------------------------------------
+<p>
+ > music <- factor(c("Jazz","Rock","Pop","Classic","Classic","Pop","Rock","Jazz","Jazz"))<br>
+> music<br>
+[1] Jazz    Rock    Pop     Classic Classic Pop     Rock    Jazz    Jazz   <br>
+Levels: Classic Jazz Pop Rock<br>
+
+</p>
+
+
+ Use levels() function
+ ---------------------
+<p>
+ > levels(music)<br>
+[1] "Classic" "Jazz"    "Pop"     "Rock"   <br>
+> levels = c("Jazz","Pop","Classic","Rocks","Others")<br>
+> levels(music)<br>
+[1] "Classic" "Jazz"    "Pop"     "Rock"   <br>
+</p>
+
+Use Factor length() Function
+---------------------------
+<p>
+ > length(music)<br>
+[1] 9<br>
+>
+</p>
+
+Access Factors
+------------
+<p>
+ > music[2]<br>
+[1] Rock<br>
+Levels: Classic Jazz Pop Rock<br>
+> 
+</p>
+
+R Data Frames
+=============
+> To Create Data Frames in data.frame() function
+
+<p>
+ 
+</p>
