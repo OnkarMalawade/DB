@@ -19,3 +19,27 @@ Plot() function
 
 > plot(x,y)
 > -------------
+
+>plot(1:10)
+>-------------
+
+Create line chart in R
+========================
+> plot(v,type,col,xlab,tlab,main,lwd,lty)
+
+Line graph
+-------
+ > plot(1:10,type="l")
+
+Line Graph color
+------------
+> plot(1:10,type="l")
+
+Line Graph Width
+---------------
+> plot(1:10,type="l",lwd=4)
+ 
+ Line Graph Width and Color
+ -----------------
+> plot(1:10,type="l",lwd=4,lty=3)
+ 
