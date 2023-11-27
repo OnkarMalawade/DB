@@ -186,10 +186,12 @@ Formatting
 # Creating a Function
 ======================
 >myFunction <- function(){
->  //create a function with the name myFunction
+//create a function with the name myFunction
 >   print("Hello World!!!")
 >}
 
  
 Call Function
 ==============
+> myFunction()
+> Output: Hello World!!!
