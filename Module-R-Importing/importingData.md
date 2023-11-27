@@ -36,3 +36,9 @@ Reading a CSV FILE
 [4] "Ryan"     "Gary"     "Nina"    <br>
 [7] "Simon"    "Guru"  <br>
 </p>
+
+> sal <- max(data$salary)
+
+> sal
+
+> [1] 843.25
