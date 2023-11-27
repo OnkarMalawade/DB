@@ -315,11 +315,26 @@ Sort a Vector using sort() function
 Access Vectors Using [index] brackets
 -----------------------------
 <p>
- 
+ > fruits <- c("banana","apple","orange","lemon","grapes")<br>
+> fruits[1]<br>
+[1] "banana"<br>
+
 </p>
 
 Access Vectors Using [From_index,ToIndex] brackets
 -----------------------------
+<p>
+ > fruits <- c("banana","apple","orange","lemon","grapes")<br>
+> fruits[c(1,4)]<br>
+[1] "banana" "lemon" <br>
+> 
+</p>
 
 Change an item in Vector
 --------------------
+<p>
+> fruits[2] <- "Peanuts"<br>
+> fruits<br>
+[1] "banana"  "Peanuts" "orange"  "lemon"   "grapes" <br>
+> 
+</p>
