@@ -249,3 +249,27 @@ Functions
 [1] 100<br>
 > <br>
 </p>
+
+Vectors
+-------
+
+Sequence
+--------
+
+Using c() function : Vector with String Values
+------------------
+
+Using (:) = Vector with Numeric Values
+-------------------------------------
+
+Vector Length() Fuction
+----------------------
+
+Sort a Vector using sort() function
+-------------
+
+Access Vectors Using [index] brackets
+-----------------------------
+
+Access Vectors Using [From_index,ToIndex] brackets
+-----------------------------
