@@ -270,6 +270,12 @@ Sequence
 
 Using c() function : Vector with String Values
 ------------------
+<p>
+ > s <- c('apple','red',5,TRUE)<br>
+> s<br>
+[1] "apple" "red"   "5"     "TRUE" <br>
+> <br>
+</p>
 
 Using (:) = Vector with Numeric Values
 -------------------------------------
