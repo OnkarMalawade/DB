@@ -206,6 +206,16 @@ The arguments gives information to the function
 Default Parameters
 ------------------
 <p>
+ > myFunction <- function(country = "Pune"){<br>
++ paste("I am from ",country)<br>
++ }<br>
+> myFunction()<br>
+[1] "I am from  Pune"<br>
+> myFunction("Talere")<br>
+[1] "I am from  Talere"<br>
+> myFunction("Bhandarpule")<br>
+[1] "I am from  Bhandarpule"<br>
+> <br>
 </p>
 
 With Parameters
