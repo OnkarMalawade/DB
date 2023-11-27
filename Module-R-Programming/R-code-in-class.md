@@ -361,6 +361,9 @@ Repeat sequence of the vector
 Repeat Each value Independent
 ------------------
 <p>
- 
+ > repeat_indep <- rep(c(1,2,3),times=c(5,3,1))<br>
+> repeat_indep <br>
+[1] 1 1 1 1 1 2 2 2 3<br>
+> 
 </p>
 
