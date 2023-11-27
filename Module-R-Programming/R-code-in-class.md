@@ -183,4 +183,14 @@ Formatting
 [1] "onkar"
 > 
 
-
+# Creating a Function
+======================
+<p>
+myFunction <- function(){
+   //create a function with the name myFunction
+   print("Hello World!!!")
+}
+</p>
+ 
+Call Function
+==============
