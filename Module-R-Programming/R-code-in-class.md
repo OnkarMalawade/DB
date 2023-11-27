@@ -187,11 +187,37 @@ Formatting
 ======================
 >myFunction <- function(){
 //create a function with the name myFunction
+
 >   print("Hello World!!!")
+
 >}
 
  
 Call Function
 ==============
 > myFunction()
+
 > Output: Hello World!!!
+
+Arugments
+=========
+The arguments gives information to the function
+
+Default Parameters
+------------------
+<p>
+</p>
+
+With Parameters
+---------------
+<p> myFunction <- function(fname){<br>
++ paste(fname,"Onkar")<br>
++ }<br>
+ myFunction()<br>
+Error in myFunction() : argument "fname" is missing, with no default<br>
+ myFunction("Atharav")<br>
+[1] "Atharav Onkar"<br>
+ myFunction("I am ")<br>
+[1] "I am  Onkar"<br>
+<br>
+</p>
