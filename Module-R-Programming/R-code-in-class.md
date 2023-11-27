@@ -352,7 +352,10 @@ Error: object 'repeact_each' not found <br>
 Repeat sequence of the vector
 -------------------------
 <p>
- 
+ > repeat_times <- rep(c(1,2,3),times=3)<br>
+> repeat_times<br>
+[1] 1 2 3 1 2 3 1 2 3<br>
+> <br>
 </p>
 
 Repeat Each value Independent
