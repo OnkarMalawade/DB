@@ -432,8 +432,44 @@ Levels: Classic Jazz Pop Rock<br>
 
 R Data Frames
 =============
-> To Create Data Frames in data.frame() function
+> To Create Data Frames in data.frame() function.
+
+>  It is Table like structure.
 
 <p>
- 
+ > Data_frame <- data.frame(Taining = c("Strength","Stamina","Others"),Pulse=c(100,150,120),Duration=c(60,30,45))<br>
+> Data_frame<br>
+   Taining Pulse Duration<br>
+1 Strength   100       60<br>
+2  Stamina   150       30<br>
+3   Others   120       45<br>
+
 </p>
+
+ ***Summary of the Data***
+
+ <p>
+  > summary(Data_frame)<br>
+   Taining              Pulse          Duration   <br>
+ Length:3           Min.   :100.0   Min.   :30.0  <br>
+ Class :character   1st Qu.:110.0   1st Qu.:37.5  <br>
+ Mode  :character   Median :120.0   Median :45.0  <br>
+                    Mean   :123.3   Mean   :45.0  <br>
+                    3rd Qu.:135.0   3rd Qu.:52.5  <br>
+                    Max.   :150.0   Max.   :60.0  <br>
+> 
+ </p>
+
+Access Data Frames
+----------------
+> Data_frame[1]
+
+   Training
+1 Strength
+2  Stamina
+3   Others
+
+
+>  Data_frame[["Pulse"]]
+
+>  Data_frame$Duration
