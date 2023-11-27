@@ -29,3 +29,10 @@ Reading a CSV FILE
 > rownames(data)
 
  "1" "2" "3" "4" "5" "6" "7" "8"
+
+ > data$name
+<p>
+[1] "Rick"     "Dan"      "Michelle"<br>
+[4] "Ryan"     "Gary"     "Nina"    <br>
+[7] "Simon"    "Guru"  <br>
+</p>
