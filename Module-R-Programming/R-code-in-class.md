@@ -231,3 +231,21 @@ Error in myFunction() : argument "fname" is missing, with no default<br>
 [1] "I am  Onkar"<br>
 <br>
 </p>
+
+Functions
+----------
+<p>
+ > add <- function(num1 , num2){<br>
++ return (num1 + num2)<br>
++ }<br>
+> print(add(10, 20))<br>
+[1] 30<br>
+> add(10, 20)<br>
+[1] 30<br>
+> mult <- function(num1){<br>
++ return (num1 * 10)<br>
++ }<br>
+> mult(10)<br>
+[1] 100<br>
+> <br>
+</p>
