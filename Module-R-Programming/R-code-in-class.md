@@ -530,3 +530,35 @@ Get Structure of Data Frame
  $ Taining : chr  "Strength" "Stamina" "Others"
  $ Pulse   : num  100 150 120
  $ Duration: num  60 30 45
+
+R Packages:
+===========
+> Its collection of complied code and sample data.
+
+> It is stored in ***libray*** in the R environment.
+
+Check Available R packages
+-------------------------
+> .libPaths()
+
+Check list of the packages installed
+------------------------
+> library()
+
+Check Currently loaded Packages
+------------------
+> search()
+
+Repositry : ***A place where package installed***
+---------------
+> cran
+
+> git
+
+How to install packages
+-----------------
+> install.packages("ggplot2")
+
+Load Libraries
+-----------
+> library(ggplot2)
