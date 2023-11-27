@@ -46,3 +46,28 @@ Line Graph Width
  Line Graph Width and Color with data
  -----------------
 > plot(x,y,type="l",lwd=4,lty=3)
+
+# Line() function
+>lines(x,type="l",lwd=4,lty=3,col="Red")
+
+> lines(y,type="l",lwd=4,lty=3,col="Blue")
+
+ ***Pie Charts***
+ ==================
+ > pie(x,labels,radius,main,col,clockwise)
+
+> x <- c(10,20,30,40)
+
+> pie(x)
+>---------------------
+
+> mLabel <- c("Apples","Grapes","Bananas","Mango")
+
+>pie(x,label=mLabel,main="Fruits")
+>------------------------------------
+
+> colors <- c("red","yellow","blue","green")
+
+>pie(x,label=mLabel,main="Fruits",col=colors)
+>---------------
+ 
