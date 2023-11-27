@@ -338,3 +338,26 @@ Change an item in Vector
 [1] "banana"  "Peanuts" "orange"  "lemon"   "grapes" <br>
 > 
 </p>
+
+Repeat Vectors each value
+-----------
+<p>
+ > repeat_each <- rep(c(1,2,3),each=3) <br>
+> repeact_each <br>
+Error: object 'repeact_each' not found <br>
+> repeat_each <br>
+[1] 1 1 1 2 2 2 3 3 3 <br>
+</p>
+
+Repeat sequence of the vector
+-------------------------
+<p>
+ 
+</p>
+
+Repeat Each value Independent
+------------------
+<p>
+ 
+</p>
+
