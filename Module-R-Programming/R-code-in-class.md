@@ -562,3 +562,7 @@ How to install packages
 Load Libraries
 -----------
 > library(ggplot2)
+
+List of the functions in Library
+--------------------
+>ls("package:ggplot2")
