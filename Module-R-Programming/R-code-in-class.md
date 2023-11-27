@@ -473,3 +473,60 @@ Access Data Frames
 >  Data_frame[["Pulse"]]
 
 >  Data_frame$Duration
+
+Add Rows
+------------
+> New_Row_DF <- rbind(Data_frame,c("Strength",110,102))
+
+> New_Row_DF
+   Taining Pulse Duration
+1 Strength   100       60
+2  Stamina   150       30
+3   Others   120       45
+4 Strength   110      102
+
+ Add Columns
+ ------------
+ > New_col_DF <- cbind(Data_frame,steps=c(121,112,122))
+
+ > New_col_DF
+<p>
+    Taining Pulse Duration Steps
+1 Strength   100       60   121
+2  Stamina   150       30   121
+3   Others   120       45   112
+> 
+</p>
+
+Remove Rows and Columns
+-----------------------
+> Data_new_frame <- Data_frame[-c(1),-c(1)]
+
+> Data_new_frame
+
+  Pulse Duration
+2   150       30
+3   120       45
+
+Amount of Rows and Columns
+--------------------
+> dim(Data_frame)
+
+> 3 3
+
+> ncol(Data_frame)
+
+> 3
+
+> nrow()
+
+> 3
+
+Get Structure of Data Frame
+------------------------
+> str(Data_frame)
+
+'data.frame':   3 obs. of  3 variables:
+ $ Taining : chr  "Strength" "Stamina" "Others"
+ $ Pulse   : num  100 150 120
+ $ Duration: num  60 30 45
