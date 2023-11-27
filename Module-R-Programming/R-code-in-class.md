@@ -385,3 +385,11 @@ Vectors with Arithmatic Operations
 > res<br>
 [1] 0.400000 1.000000 1.000000 2.666667 1.000000<br><br>
 </p>
+
+R Factors
+=========
+> Factors are the data objects used to categories data and store it as levels.
+
+> They can store both strings and integers.
+
+> To create a factor, use factor() function and add a vector as argument. 
