@@ -291,14 +291,32 @@ Using (:) = Vector with Numeric Values
 [1] 1.4 2.4 3.4 4.4 5.4<br>
 > 
 </p>
+
 Vector Length() Fuction
 ----------------------
+<p>
+ > fruits <- c("banana","apple","orange")<br>
+> length(fruits)<br>
+[1] 3<br>
+</p>
 
 Sort a Vector using sort() function
 -------------
+<p>
+ > fruits <- c("banana","apple","orange","lemon","grapes")<br>
+> sort(fruits)<br>
+[1] "apple"  "banana" "grapes" "lemon"  "orange"<br>
+> numbers <- 1.4 : 5.6<br>
+> sort(numbers)<br>
+[1] 1.4 2.4 3.4 4.4 5.4<br>
+> 
+</p>
 
 Access Vectors Using [index] brackets
 -----------------------------
+<p>
+ 
+</p>
 
 Access Vectors Using [From_index,ToIndex] brackets
 -----------------------------
