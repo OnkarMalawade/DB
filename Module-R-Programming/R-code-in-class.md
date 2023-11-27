@@ -252,9 +252,21 @@ Functions
 
 Vectors
 -------
-
+<p>
+> fruits <- c("banana","apple","orange")<br>
+> fruits<br>
+[1] "banana" "apple"  "orange"<br>
+> 
+</p>
+ 
 Sequence
 --------
+<p>> print(seq(5,9,by=0.4))<br>
+ [1] 5.0 5.4 5.8 6.2 6.6 7.0 7.4 7.8 8.2 8.6 9.0<br>
+> num = seq(from = 0, to = 100, by = 20)<br>
+> num<br>
+[1]   0  20  40  60  80 100<br>
+> </p>
 
 Using c() function : Vector with String Values
 ------------------
@@ -273,3 +285,6 @@ Access Vectors Using [index] brackets
 
 Access Vectors Using [From_index,ToIndex] brackets
 -----------------------------
+
+Change an item in Vector
+--------------------
