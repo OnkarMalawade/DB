@@ -43,3 +43,6 @@ Line Graph Width
  -----------------
 > plot(1:10,type="l",lwd=4,lty=3)
  
+ Line Graph Width and Color with data
+ -----------------
+> plot(x,y,type="l",lwd=4,lty=3)
