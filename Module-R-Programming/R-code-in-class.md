@@ -185,12 +185,11 @@ Formatting
 
 # Creating a Function
 ======================
-<p>
-myFunction <- function(){
-   //create a function with the name myFunction
-   print("Hello World!!!")
-}
-</p>
+>myFunction <- function(){
+>  //create a function with the name myFunction
+>   print("Hello World!!!")
+>}
+
  
 Call Function
 ==============
