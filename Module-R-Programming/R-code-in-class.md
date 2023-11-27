@@ -367,3 +367,21 @@ Repeat Each value Independent
 > 
 </p>
 
+Vectors with Arithmatic Operations
+-------------------------------
+<p>
+> v1 <- c(2,4,6,8,7)<br>
+> v2 <- c(5,4,6,3,7)<br>
+> res = v1 + v2<br>
+> res<br>
+[1]  7  8 12 11 14<br><br>
+> res = v1 - v2<br>
+> res<br>
+[1] -3  0  0  5  0<br><br>
+> res = v1 * v2<br>
+> res<br>
+[1] 10 16 36 24 49<br><br>
+> res = v1 / v2<br>
+> res<br>
+[1] 0.400000 1.000000 1.000000 2.666667 1.000000<br><br>
+</p>
