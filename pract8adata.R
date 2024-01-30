@@ -1,0 +1,22 @@
+#clear un used data
+rm(list=ls())
+
+e1071
+
+install.packages("e1071")
+library(e1071)
+
+NBdataset<-read.table("fever.csv",header = TRUE,sep = ",")
+
+classifier<-naiveBayes(NBdataset[,1:4],NBdataset[,5])
+
+table(predict(classifier,NBdataset[,5]),NBdataset[,5],
+              dnn= list('predicted','actual'))
+
+classifier$tables
+
+NBdataset[15,-5] <- as.factor(c(Chills="Yes",Runny_Nose="No",Headache="mild",Fever="Yes"))
+
+print(NBdataset[15,-5])
+result<-predict(classifier,NBdataset[15,-5])
+print(result)
